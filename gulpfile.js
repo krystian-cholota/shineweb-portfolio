@@ -1,18 +1,20 @@
-var gulp = require('gulp');
-var browserSync = require('browser-sync');
-var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
-var autoprefixer = require('gulp-autoprefixer');
-var cleanCSS = require('gulp-clean-css');
-var uglify = require('gulp-uglify');
-var concat = require('gulp-concat');
-var imagemin = require('gulp-imagemin');
-var changed = require('gulp-changed');
-var htmlReaplce = require('gulp-html-replace');
-var htmlMin = require('gulp-htmlmin');
-var del = require('del');
-var sequence = require('run-sequence');
+// Load modules
+var gulp = require('gulp'),
+	browserSync = require('browser-sync'),
+	sass = require('gulp-sass'),
+	sourcemaps = require('gulp-sourcemaps'),
+	autoprefixer = require('gulp-autoprefixer'),
+	cleanCSS = require('gulp-clean-css'),
+	uglify = require('gulp-uglify'),
+	concat = require('gulp-concat'),
+	imagemin = require('gulp-imagemin'),
+	changed = require('gulp-changed'),
+	htmlReaplce = require('gulp-html-replace'),
+	htmlMin = require('gulp-htmlmin'),
+	del = require('del'),
+	sequence = require('run-sequence');
 
+// config
 var config = {
 	dist: 'dist/',
 	src: 'src/',
@@ -25,7 +27,7 @@ var config = {
 		img: 'src/images/**/*.{jpg,jpeg,png,gif,ico,svg}',
 		font: 'src/fonts/**/*.*',
 		php: 'src/php/**/*.php',
-		html: 'src/*.html',
+		index: 'src/*.php',
 		scss: 'src/scss/**/*.scss',
 		portfolio: 'src/portfolio/**/*.html'
 	},
@@ -38,7 +40,7 @@ var config = {
 		img: 'dist/images/',
 		font: 'dist/fonts/',
 		php: 'dist/php',
-		html: 'dist/',
+		index: 'dist/',
 		scss: 'src/css/',
 		css_name: 'style.css',
 		js_name: 'main.min.js',
@@ -53,11 +55,11 @@ gulp.task('reload', function() {
 });
 
 gulp.task('serve', ['sass'], function() {
-	browserSync({
-		server: config.src
-	});
+	browserSync.init({
+        proxy: 'local.shineweb/' + config.src
+    });
 
-	gulp.watch([config.in.html, config.in.js], ['reload']);
+	gulp.watch([config.in.index, config.in.js], ['reload']);
 	gulp.watch(config.in.scss, ['sass']);
 });
 
@@ -117,15 +119,10 @@ gulp.task('php', function() {
 
 // HTML
 gulp.task('html', function() {
-	return gulp.src(config.in.html)
+	return gulp.src(config.in.index)
 		.pipe(htmlReaplce({
 			'css': config.out.css_replace,
 			'js': config.out.js_replace
-		}))
-		.pipe(htmlMin({
-			sortAttributes: true,
-			sortClassName: true,
-			collapseWhitespace: true
 		}))
 		.pipe(gulp.dest(config.dist))
 });

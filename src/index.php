@@ -17,6 +17,17 @@
 
 	<link href='http://fonts.googleapis.com/css?family=Raleway:400,800,700,600,500,300' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic' rel='stylesheet' type='text/css'>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-47465661-1"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-47465661-1');
+	</script>
+
 </head>
 <body class="full-layout">
 <div id="preloader"><div id="status"><div class="spinner"></div></div></div>
@@ -27,7 +38,7 @@
 				<i></i>
 			</button>
 			<div class="navbar-brand">
-				<a href="index.html"><img src="images/logotyp.png" alt="shineweb.pl" data-src="images/logotyp.png" data-ret="images/logotyp.png" class="logo" /></a>
+				<a href="http://www.shineweb.pl"><img src="images/logotyp.png" alt="shineweb.pl" data-src="images/logotyp.png" data-ret="images/logotyp.png" class="logo" /></a>
 			</div>
 			<!-- /.navbar-brand -->
 		</div>
@@ -317,11 +328,11 @@
 				</div>
 				<!-- /.services-2 -->
 				<div class="divide30"></div>
-				<div class="form-container">
+				<!-- <div class="form-container">
 					<div class="response alert alert-success"></div>
 
-					<div class="messages" style="display: none;">Message sending</div>
-					<form id="contact-form" class="forms" method="post" action="php/contact.php" role="form">
+					<div class="messages" style="display: none;"></div>
+					<form id="contact-form" class="forms" method="post" action="php/contact" role="form">
 						<div class="controls">
 							<div class="row">
 								<div class="col-md-6">
@@ -365,7 +376,7 @@
 							</div>
 						</div>
 					</form>
-				</div>
+				</div> -->
 				<!-- /.form-container -->
 
 			</div>
@@ -376,6 +387,15 @@
 		<footer class="footer box">
 			<p class="float-left">© 2012-2017 by ShineWeb.pl. All rights reserved.</p>
 			<div class="clearfix"></div>
+			<div class="divide20"></div>
+			<div class="align-items-center text-center">
+				<?php
+					define('SEOPILOT_USER', '699a17e8a32c2fd5c7ec325b05d85f40');
+					require_once($_SERVER['DOCUMENT_ROOT'].'/'.SEOPILOT_USER.'/SeoPilotClient.php');
+					$seopilot = new SeoPilotClient();
+					echo $seopilot->build_links();
+				?>
+			</div>
 		</footer>
 		<!-- /footer -->
 
@@ -383,6 +403,8 @@
 	<!-- /.container -->
 </div>
 <!-- /.body-wrapper -->
+
+
 
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
