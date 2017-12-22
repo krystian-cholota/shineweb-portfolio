@@ -387,15 +387,6 @@
 		<footer class="footer box">
 			<p class="float-left">© 2012-2017 by ShineWeb.pl. All rights reserved.</p>
 			<div class="clearfix"></div>
-			<div class="divide20"></div>
-			<div class="align-items-center text-center">
-				<?php
-					define('SEOPILOT_USER', '699a17e8a32c2fd5c7ec325b05d85f40');
-					require_once($_SERVER['DOCUMENT_ROOT'].'/'.SEOPILOT_USER.'/SeoPilotClient.php');
-					$seopilot = new SeoPilotClient();
-					echo $seopilot->build_links();
-				?>
-			</div>
 		</footer>
 		<!-- /footer -->
 
@@ -403,9 +394,6 @@
 	<!-- /.container -->
 </div>
 <!-- /.body-wrapper -->
-
-
-
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
