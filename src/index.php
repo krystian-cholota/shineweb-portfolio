@@ -28,6 +28,14 @@
 	gtag('config', 'UA-47465661-1');
 	</script>
 
+	<!-- Google AdSense -->
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+	(adsbygoogle = window.adsbygoogle || []).push({
+		google_ad_client: "ca-pub-1441885595026418",
+		enable_page_level_ads: true
+	});
+	</script>
 </head>
 <body class="full-layout">
 <div id="preloader"><div id="status"><div class="spinner"></div></div></div>

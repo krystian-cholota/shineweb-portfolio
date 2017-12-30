@@ -9,7 +9,7 @@ var gulp = require('gulp'),
 	concat = require('gulp-concat'),
 	imagemin = require('gulp-imagemin'),
 	changed = require('gulp-changed'),
-	htmlReaplce = require('gulp-html-replace'),
+	htmlReplace = require('gulp-html-replace'),
 	htmlMin = require('gulp-htmlmin'),
 	del = require('del'),
 	sequence = require('run-sequence');
@@ -120,10 +120,11 @@ gulp.task('php', function() {
 // HTML
 gulp.task('html', function() {
 	return gulp.src(config.in.index)
-		.pipe(htmlReaplce({
+		.pipe(htmlReplace({
 			'css': config.out.css_replace,
 			'js': config.out.js_replace
 		}))
+		.pipe(htmlMin({collapseWhitespace: true}))
 		.pipe(gulp.dest(config.dist))
 });
 
