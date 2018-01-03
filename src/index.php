@@ -18,24 +18,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Raleway:400,800,700,600,500,300' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic' rel='stylesheet' type='text/css'>
 
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-47465661-1"></script>
-	<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
 
-	gtag('config', 'UA-47465661-1');
-	</script>
-
-	<!-- Google AdSense -->
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	<script>
-	(adsbygoogle = window.adsbygoogle || []).push({
-		google_ad_client: "ca-pub-1441885595026418",
-		enable_page_level_ads: true
-	});
-	</script>
 </head>
 <body class="full-layout">
 <div id="preloader"><div id="status"><div class="spinner"></div></div></div>
@@ -393,7 +376,8 @@
 		<!-- /#contact -->
 
 		<footer class="footer box">
-			<p class="float-left">© 2012-2017 by ShineWeb.pl. All rights reserved.</p>
+			<p class="float-left">© 2012-<script>document.write(new Date().getFullYear())</script>
+								 by ShineWeb.pl. All rights reserved.</p>
 			<div class="clearfix"></div>
 		</footer>
 		<!-- /footer -->
@@ -405,8 +389,8 @@
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-<script src="js/plugins/jquery.min.js"></script>
-<script src="js/plugins/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
 <script src="js/plugins/jquery.themepunch.tools.min.js"></script>
 
 <!-- build:js -->

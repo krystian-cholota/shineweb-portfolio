@@ -1,11 +1,10 @@
-$(document).ready(function () {
+$(function() {
 "use strict";
 
 	/*-----------------------------------------------------------------------------------*/
 	/*	SNOW EFFECT
 	/*-----------------------------------------------------------------------------------*/
 	snowFall.snow(document.body, {round : true, shadow : true, minSize: 5, maxSize:8, maxSpeed: 10, flakeCount: 100});
-	
 
 	/*-----------------------------------------------------------------------------------*/
 	/*	VIDEO
@@ -150,7 +149,7 @@ $(document).ready(function () {
 /*-----------------------------------------------------------------------------------*/
 /*	PRELOADER
 /*-----------------------------------------------------------------------------------*/
-$(window).load(function() { // makes sure the whole site is loaded
+$(window).on('load', function(){ // makes sure the whole site is loaded
 		$('#status').fadeOut(); // will first fade out the loading animation
 		$('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
 		$('body').delay(350).css({'overflow':'visible'});
@@ -179,35 +178,35 @@ window.onload = init();
 /*-----------------------------------------------------------------------------------*/
 /*	SCROLL NAVIGATION HIGHLIGHT
 /*-----------------------------------------------------------------------------------*/
-jQuery(document).ready(function() {
-	headerWrapper = parseInt(jQuery('.navbar').height(), 10);
+$(function() {
+	headerWrapper = parseInt($('.navbar').height(), 10);
 	var shrinked_header_height = 64,
-	header_height = jQuery('.navbar').height(),
-	navItems = jQuery('.navbar ul a[href^="#"]').not('.navbar ul a[href="#"], .navbar ul a.fancybox-inline');
-	jQuery('.offset').css('padding-top', header_height + 'px');
-	jQuery('.anchor').css('padding-top', shrinked_header_height + 'px');
-	jQuery('.anchor').css('margin-top', -(shrinked_header_height) + 'px');
+	header_height = $('.navbar').height(),
+	navItems = $('.navbar ul a[href^="#"]').not('.navbar ul a[href="#"], .navbar ul a.fancybox-inline');
+	$('.offset').css('padding-top', header_height + 'px');
+	$('.anchor').css('padding-top', shrinked_header_height + 'px');
+	$('.anchor').css('margin-top', -(shrinked_header_height) + 'px');
 	offsetTolerance = -(header_height);
 	//Detecting user's scroll
-	jQuery(window).scroll(function() {
+	$(window).scroll(function() {
 		//Check scroll position
-		scrollPosition = parseInt(jQuery(this).scrollTop(), 10);
+		scrollPosition = parseInt($(this).scrollTop(), 10);
 		//Move trough each menu and check its position with scroll position then add current class
 		navItems.each(function() {
-		var thisHref = jQuery(this).attr('href');
-		if( jQuery(thisHref).length ){
-			thisTruePosition = parseInt(jQuery(thisHref).offset().top, 10);
+		var thisHref = $(this).attr('href');
+		if( $(thisHref).length ){
+			thisTruePosition = parseInt($(thisHref).offset().top, 10);
 			thisPosition = thisTruePosition - headerWrapper - offsetTolerance;
 			if(scrollPosition >= thisPosition) {
-				jQuery('.current').removeClass('current');
-				jQuery('.navbar ul a[href='+ thisHref +']').parent('li').addClass('current');
+				$('.current').removeClass('current');
+				$('.navbar ul a[href="'+ thisHref +'"]').parent('li').addClass('current');
 			}
 		}
 		});
 		//If we're at the bottom of the page, move pointer to the last section
-		bottomPage = parseInt(jQuery(document).height(), 10) - parseInt(jQuery(window).height(), 10);
+		bottomPage = parseInt($(document).height(), 10) - parseInt($(window).height(), 10);
 		if(scrollPosition == bottomPage || scrollPosition >= bottomPage) {
-			jQuery('.current').removeClass('current');
+			$('.current').removeClass('current');
 			navItems.last().parent('li').addClass('current');
 		}
 	});
@@ -406,7 +405,7 @@ jQuery(document).ready(function() {
 /*-----------------------------------------------------------------------------------*/
 /*	ISOTOPE
 /*-----------------------------------------------------------------------------------*/
-$( function() {
+$(function() {
 	// init Isotope
 	var $container = $('.isotope');
 
@@ -431,7 +430,7 @@ $( function() {
 /*-----------------------------------------------------------------------------------*/
 /*	Progress bar
 /*-----------------------------------------------------------------------------------*/
-jQuery(document).ready(function(){
+$(function() {
 	jQuery('.progress-bar').each(function(){
 		jQuery(this).find('.progress').animate({
 			width:jQuery(this).attr('data-percent')
