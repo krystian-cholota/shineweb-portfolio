@@ -39,7 +39,6 @@ Author:		Krystian Chołota
 -------------------------------------------------------------------------------------*/
 
 @import 'fonts';
-// @import 'color';
 @import 'plugins';
 
 /*-----------------------------------------------------------------------------------*/
@@ -47,12 +46,8 @@ Author:		Krystian Chołota
 /*-----------------------------------------------------------------------------------*/
 
 * {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	&:before, &:after {
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 	}
 }
@@ -90,39 +85,6 @@ iframe {
 	/* Firefox */
 	color: #2f2f2f;
 }
-
-@-webkit-keyframes rotation {
-	from {
-		-webkit-transform: rotate(0deg);
-	}
-
-	to {
-		-webkit-transform: rotate(359deg);
-	}
-}
-
-
-@-moz-keyframes rotation {
-	from {
-		-moz-transform: rotate(0deg);
-	}
-
-	to {
-		-moz-transform: rotate(359deg);
-	}
-}
-
-
-@-o-keyframes rotation {
-	from {
-		-o-transform: rotate(0deg);
-	}
-
-	to {
-		-o-transform: rotate(359deg);
-	}
-}
-
 
 @keyframes rotation {
 	from {
@@ -162,14 +124,8 @@ body {
 	height: 40px;
 	width: 40px;
 	position: relative;
-	-webkit-animation: rotation .8s infinite linear;
-	-moz-animation: rotation .8s infinite linear;
-	-o-animation: rotation .8s infinite linear;
 	animation: rotation .8s infinite linear;
-	border-left: 3px solid rgba(225, 142, 74, 0.15);
-	border-right: 3px solid rgba(225, 142, 74, 0.15);
-	border-bottom: 3px solid rgba(225, 142, 74, 0.15);
-	border-top: 3px solid rgba(225, 142, 74, 0.8);
+	border: 3px solid rgba(225, 142, 74, 0.15);
 	border-radius: 100%;
 }
 
@@ -560,8 +516,6 @@ video {
 		border: 2px solid #faaa5e;
 		color: #faaa5e !important;
 		transition: all 200ms ease-in;
-		
-		
 		box-shadow: none;
 	}
 }
@@ -572,10 +526,6 @@ video {
 			border: 2px solid #faaa5e;
 			color: #faaa5e !important;
 			transition: all 200ms ease-in;
-			
-			
-			-webkit-box-shadow: none;
-			-moz-box-shadow: none;
 			box-shadow: none;
 		}
 	}
@@ -584,8 +534,6 @@ video {
 			border: 2px solid #faaa5e;
 			color: #faaa5e !important;
 			transition: all 200ms ease-in;
-			
-			
 			box-shadow: none;
 		}
 	}
@@ -595,8 +543,6 @@ video {
 	border: 2px solid #faaa5e;
 	color: #faaa5e !important;
 	transition: all 200ms ease-in;
-	
-	
 	box-shadow: none;
 }
 
@@ -723,13 +669,11 @@ video {
 	padding: 0;
 	float: left;
 	height: auto;
+	transition: all 200ms ease-in;
+
 	a {
 		transition: none;
 	}
-	transition: all 200ms ease-in;
-	
-	
-
 	img.logo {
 		width: 50%;
 	}
